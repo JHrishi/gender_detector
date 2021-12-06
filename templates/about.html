@@ -1,0 +1,10 @@
+{% extends 'home.html' %}
+{% block title %} Home{% endblock title %}
+{% block body %}
+<div class="container">
+        <h1 class="jumbotron">Loss and accuracy function of our trained model</h1>
+        <img src="{{url_for('static', filename='Loss Function.png')}}"  width="1000" height="500" align="center">
+        <img src="{{url_for('static', filename='Accuracy Function.png')}}"  width="1000" height="500" align="center">
+</div>
+
+{% endblock body %}

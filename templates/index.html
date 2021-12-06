@@ -1,0 +1,42 @@
+{% extends "home.html" %}
+{% block body %}
+<div class="container">
+    <h1 class="jumbotron"><b>Gender detector.......</b>
+    <img src="{{url_for('static', filename='logo.jpg')}}"  width="500" height="200" align="right">
+    </h1>
+    <br><br>
+    <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
+
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Upload Your Image :</label>
+            <div class="col-sm-10">
+                <input type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="container">
+    <p> {% with messages = get_flashed_messages() %}
+        {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    </p>
+    <img src="{{url_for('static', filename='data.jpg')}}" align="center">
+</div>
+
+{% endblock %}
+
+
+
+
